@@ -11,3 +11,13 @@ export const getAllArticles= () => {
             return error
         })
 }
+
+export const specificArticle= (article_id) => {
+    return api.get(`/articles/${article_id}`)
+        .then((response)=>{
+            return response.data
+        })
+        .catch((error)=>{
+            return error
+        })
+}
