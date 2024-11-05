@@ -1,7 +1,7 @@
 import { getAllArticles } from "../utils/api"
 import { useState, useEffect } from "react"
-import IndexListing from "./IndexListing"
-export default function Index() {
+import HomeListing from "./HomeListing"
+export default function Home() {
   const [isLoading, setIsLoading]= useState(true)
   const [isError, setIsError]= useState(false)
 
@@ -23,14 +23,14 @@ export default function Index() {
 
   if (isError) {
     return <h1>Error No Items Found</h1>;
-}
-if (isLoading) {
+  }
+  if (isLoading) {
     return <h1>Loading...</h1>;
-}
+  }
 
   return (
     <>
-      <IndexListing allArticles={allArticles}/>
+      <HomeListing allArticles={allArticles}/>
     </>
   )
 }
