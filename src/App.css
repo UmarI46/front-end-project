@@ -48,6 +48,25 @@
     justify-content: space-evenly;
 }
 
+.commentSection{
+    background-color: rgb(218, 218, 218);
+    justify-content: left;
+    padding: 15px;
+}
+
+.comment{
+    border: 2px solid black;
+    justify-content: left;
+    background-color: rgb(247, 247, 247);
+    text-align: left;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+#commentBody{
+    background-color: rgb(223, 221, 221);
+}
+
 .categoriesDropdownLabel {
     border: 2px solid black;
 }

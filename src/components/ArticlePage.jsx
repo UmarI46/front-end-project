@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { specificArticle } from "../utils/api"
 import ArticlePageView from "./ArticlePageView"
+import ArticleCommentSection from "./ArticleCommentSection"
 
 export default function ArticlePage() {
     const [isError, setIsError] = useState(false)
@@ -32,6 +33,9 @@ export default function ArticlePage() {
     if(isLoading) return <h1>Loading...</h1>
 
   return (
+    <>
     <ArticlePageView articleData={articleData}/>
+    <ArticleCommentSection article_id={location.state.article_id}/>
+    </>
   )
 }
