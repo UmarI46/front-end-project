@@ -7,18 +7,12 @@ export const getAllArticles= () => {
         .then((response)=>{
             return response.data
         })
-        .catch((error)=>{
-            return error
-        })
 }
 
 export const specificArticle= (article_id) => {
     return api.get(`/articles/${article_id}`)
         .then((response)=>{
             return response.data
-        })
-        .catch((error)=>{
-            return error
         })
 }
 
@@ -27,9 +21,6 @@ export const commentSection= (article_id) => {
         .then((response)=>{
             return response.data
         })
-        .catch((error)=>{
-            return error
-        })
 }
 
 export const updateArticleVotes= ( article_id, voteChange=23) => {
@@ -37,9 +28,5 @@ export const updateArticleVotes= ( article_id, voteChange=23) => {
         .then((response)=>{
             console.log(response.data.article.votes, "API STATE")
             return response.data
-        })
-        .catch((error)=>{
-            console.log(error)
-            return error
         })
 }

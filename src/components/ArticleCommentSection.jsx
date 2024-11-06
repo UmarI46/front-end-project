@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { commentSection } from "../utils/api"
+import ArticleCommentSectionView from "./ArticleCommentSectionView"
 
 
 export default function ArticleCommentSection({article_id, comment_count}) {
@@ -25,18 +26,6 @@ export default function ArticleCommentSection({article_id, comment_count}) {
     if(isLoading)return <h1>Loading...</h1>
 
   return (
-    <div className="commentSection">
-        <h2>Comments: {comment_count}</h2>
-        {commentSectionData.map((comment)=>{
-            return (
-            <div className="comment" key={comment.comment_id}>
-                <h3>{comment.author}</h3>
-                <p id="commentBody">{comment.body}</p>
-                <p>Votes: {comment.votes}</p>
-                <p>Posted On: {comment.created_at}</p>
-            </div>
-            )
-        })}
-    </div>
+    <ArticleCommentSectionView commentSection={commentSectionData} comment_count={comment_count}/>
   )
 }
