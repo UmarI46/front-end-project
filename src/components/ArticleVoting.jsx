@@ -10,8 +10,6 @@ export default function ArticleVoting({article_id, votes}) {
     },[])
 
     function upVoting(){
-        console.log("UP VOTING")
-        console.log(currentVotes, "PAGE STATE")
         if(!isUpVoted && !isDownVoted){
             setIsUpVoted(true)
             setCurrentVotes(votes +1)
@@ -30,8 +28,6 @@ export default function ArticleVoting({article_id, votes}) {
         }
     }
     function downVoting(){
-        console.log("DOWN VOTING")
-        console.log(currentVotes, "PAGE STATE")
         if(!isUpVoted && !isDownVoted){
             setIsDownVoted(true)
             setCurrentVotes(votes -1)
