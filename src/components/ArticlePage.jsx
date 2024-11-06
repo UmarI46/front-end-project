@@ -4,6 +4,7 @@ import { specificArticle } from "../utils/api"
 import ArticlePageView from "./ArticlePageView"
 import ArticleCommentSection from "./ArticleCommentSection"
 import ArticleVoting from "./ArticleVoting"
+import AddComment from "./AddComment"
 
 export default function ArticlePage() {
     const [isError, setIsError] = useState(false)
@@ -34,6 +35,7 @@ export default function ArticlePage() {
     <>
     <ArticlePageView articleData={articleData}/>
     <ArticleVoting article_id={article_id} votes={articleData.votes}/>
+    <AddComment article_id={article_id}/>
     <ArticleCommentSection article_id={article_id} comment_count={articleData.comment_count}/>
     </>
   )

@@ -79,6 +79,17 @@
     background-color: rgb(223, 221, 221);
 }
 
+#newComment{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+#typeComment{
+    width: fit-content;
+}
+
 .categoriesDropdownLabel {
     border: 2px solid black;
 }

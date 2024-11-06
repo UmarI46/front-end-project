@@ -23,10 +23,16 @@ export const commentSection= (article_id) => {
         })
 }
 
-export const updateArticleVotes= ( article_id, voteChange=23) => {
+export const updateArticleVotes= ( article_id, voteChange) => {
     return api.patch(`/articles/${article_id}`, {incVotes: voteChange})
         .then((response)=>{
-            console.log(response.data.article.votes, "API STATE")
+            return response.data
+        })
+}
+
+export const postComment= ( article_id, user, commentText) => {
+    return api.post(`/articles/${article_id}/comments`, {username: user, body: commentText})
+        .then((response)=>{
             return response.data
         })
 }
