@@ -6,7 +6,7 @@ export default function HomeListing({allArticles}) {
         {allArticles.map((article)=>{
             return (
                 <div className="box" key={article.article_id}>
-                    <Link to= "/articles/:article_id" state={{article_id:article.article_id}}>{article.title} </Link>
+                    <Link to= {`/articles/${article.article_id}`} >{article.title} </Link>
                     <br/>
                     <img className="imgHomeList" src={article.article_img_url}/>
                     <p>{article.author}</p>
