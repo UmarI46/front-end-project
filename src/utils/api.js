@@ -31,3 +31,15 @@ export const commentSection= (article_id) => {
             return error
         })
 }
+
+export const updateArticleVotes= ( article_id, voteChange=23) => {
+    return api.patch(`/articles/${article_id}`, {incVotes: voteChange})
+        .then((response)=>{
+            console.log(response.data.article.votes, "API STATE")
+            return response.data
+        })
+        .catch((error)=>{
+            console.log(error)
+            return error
+        })
+}

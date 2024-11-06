@@ -2,12 +2,10 @@ import { useEffect, useState } from "react"
 import { commentSection } from "../utils/api"
 
 
-export default function ArticleCommentSection({article_id}) {
+export default function ArticleCommentSection({article_id, comment_count}) {
     const [isError, setIsError]= useState(false)
     const [isLoading, setIsLoading]= useState(true)
     const [commentSectionData, setCommentSectionData]= useState()
-
-    console.log(article_id)
 
     useEffect(()=>{
         setIsError(false)
@@ -15,7 +13,6 @@ export default function ArticleCommentSection({article_id}) {
 
         commentSection(article_id)
         .then((response)=>{
-            console.log(response.comments)
             setCommentSectionData(response.comments)
             setIsLoading(false)
         })
@@ -29,6 +26,7 @@ export default function ArticleCommentSection({article_id}) {
 
   return (
     <div className="commentSection">
+        <h2>Comments: {comment_count}</h2>
         {commentSectionData.map((comment)=>{
             return (
             <div className="comment" key={comment.comment_id}>
