@@ -36,3 +36,10 @@ export const postComment= ( article_id, user, commentText) => {
             return response.data
         })
 }
+
+export const deleteComment= ( comment_id) => {
+    return api.delete(`/comments/${comment_id}`)
+        .then((response)=>{
+            return response.data
+        })
+}

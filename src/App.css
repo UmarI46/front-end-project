@@ -90,6 +90,14 @@
     width: fit-content;
 }
 
+#deleteComment{
+    background-color: rgb(240, 70, 70);
+    width: fit-content;
+    height: fit-content;
+}
+
+
+
 .categoriesDropdownLabel {
     border: 2px solid black;
 }
