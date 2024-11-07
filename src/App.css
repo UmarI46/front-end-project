@@ -96,7 +96,29 @@
     height: fit-content;
 }
 
+.topicListing {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(115, 188, 247);
+    justify-content: center;
+}
 
+#topicName, #topicDescription{
+   width: 100%;
+}
+
+.topicLink{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    height: fit-content;
+}
+
+#topicListHeader{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
 
 .categoriesDropdownLabel {
     border: 2px solid black;

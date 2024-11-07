@@ -7,6 +7,7 @@ import Home from './components/Home'
 import SignIn from './components/SignIn'
 import Topics from './components/Topics'
 import ArticlePage from './components/ArticlePage'
+import IndivisualTopic from './components/IndivisualTopic'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path= "/" element={<Home/>} />
         <Route path= "/articles/:article_id" element= {<ArticlePage />}/>
         <Route path= "/topics" element={<Topics/>}/>
+        <Route path= "/topics/:topic" element={<IndivisualTopic/>}/>
         <Route path= "/sign-in" element={<SignIn/>} />
       </Routes>
     </>

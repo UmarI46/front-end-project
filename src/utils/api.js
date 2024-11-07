@@ -43,3 +43,10 @@ export const deleteComment= ( comment_id) => {
             return response.data
         })
 }
+
+export const getAllTopics= () => {
+    return api.get(`/topics`)
+        .then((response)=>{
+            return response.data
+        })
+}
