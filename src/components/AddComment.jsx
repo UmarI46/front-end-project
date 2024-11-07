@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { postComment } from "../utils/api"
+import { usernameContext } from "../contexts/UsernameProvider"
 import DisplayNewComment from "./DisplayNewComment"
 export default function AddComment({article_id}) {
     const [comment, setComment]= useState("")
     const [commentView, setCommentView]= useState("")
     const [isLoading, setIsLoading]= useState(false)
     const [isError, setIsError]= useState(false)
+    const {username}= useContext(usernameContext)
 
     const addComment = (event) =>{
         event.preventDefault()
-        const user="jessjelly"
         if (comment!== ""){
             setIsLoading(true)
-            postComment(article_id, user, comment)
+            postComment(article_id, username, comment)
             .then((response)=>{
                 setCommentView(response.newComment)
             })
