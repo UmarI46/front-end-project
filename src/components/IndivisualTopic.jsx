@@ -2,8 +2,9 @@ import { useEffect, useState } from "react"
 import { getAllTopics } from "../utils/api"
 import TopicsView from "./TopicsView"
 import { getAllArticles } from "../utils/api"
+import TopicsArticleView from "./TopicsArticleView"
 
-export default function Topics() {
+export default function IndivisualTopic() {
   const [isLoading, setIsLoading]= useState(true)
   const [isError, setIsError]= useState(false)
 
@@ -41,6 +42,6 @@ export default function Topics() {
   }
 
   return (
-    <TopicsView allTopics={allTopics} allArticles={allArticles}/>
+    <TopicsArticleView allTopics={allTopics} allArticles={allArticles}/>
   )
 }
