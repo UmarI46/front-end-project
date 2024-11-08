@@ -2,13 +2,12 @@ import axios from 'axios'
 
 const api =axios.create({baseURL:"https://back-end-project-ajfq.onrender.com/api"})
 
-export const getAllArticles= () => {
-    return api.get(`/articles`)
+export const getAllArticles= (sortBy="created_at", orderBy="DESC") => {
+    return api.get(`/articles?sort_by=${sortBy}&order=${orderBy}`)
         .then((response)=>{
             return response.data
         })
 }
-
 export const specificArticle= (article_id) => {
     return api.get(`/articles/${article_id}`)
         .then((response)=>{
