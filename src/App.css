@@ -124,6 +124,21 @@
     padding: 30px;
 }
 
+body{
+    background-color: rgb(238, 252, 162);
+}
+
+#articleBody{
+        padding-left: 100px;
+        padding-right: 100px;
+}
+
+@media(max-width:700px){
+    #articleBody{
+        padding-left: 20px;
+        padding-right: 20px;
+}
+}
 
 .categoriesDropdownLabel {
     border: 2px solid black;

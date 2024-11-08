@@ -8,7 +8,7 @@ export default function ArticlePageView({articleData}) {
           <p>Posted On: {articleData.created_at}</p>
           </div>
           <img className="imgArticlePost" src={articleData.article_img_url}/>
-          <p>{articleData.body}</p>
+          <p id="articleBody">{articleData.body}</p>
       </div>
     </>
   )

@@ -7,13 +7,13 @@ export default function AddComment({article_id}) {
     const [commentView, setCommentView]= useState("")
     const [isLoading, setIsLoading]= useState(false)
     const [isError, setIsError]= useState(false)
+    const [isCommented, setIsCommented]= useState(false)
     const {username}= useContext(usernameContext)
-    const noText= document.getElementById("warningComment")
 
     const addComment = (event) =>{
         event.preventDefault()
         if (comment!== ""){
-            noText.style.display="none"
+            warningComment.style.display="none"
             setIsLoading(true)
             postComment(article_id, username, comment)
             .then((response)=>{
@@ -25,7 +25,7 @@ export default function AddComment({article_id}) {
             setIsLoading(false)
         }
         else{
-            noText.style.display="block"
+            warningComment.style.display="block"
         }
     }
 
@@ -34,6 +34,7 @@ export default function AddComment({article_id}) {
 
     return (
           <>
+            <h2>Comment Here</h2>
             <form id="newComment">
                 <label>
                     <input onChange={(e)=>{setComment(e.target.value)}} type="text" name="comment" id="typeComment" placeholder="Comment Here..." required></input>
@@ -41,7 +42,6 @@ export default function AddComment({article_id}) {
                 <br/>
                 <button onClick={addComment} id="test">Comment!</button>
             </form>
-            <h2>Comment Preview</h2>
             <h3 id="warningComment" style={{display:"none", color:"red"}}>Nothing to comment...</h3>
             <DisplayNewComment comment={commentView} />
           </>
