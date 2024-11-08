@@ -1,10 +1,22 @@
+import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 
 export default function TopicsArticleView({allTopics, allArticles}) {
     const {topic}=useParams()
+    const [isValidTopic, setIsValidTopic]= useState(false)
+    useEffect(()=>{
+
+      allTopics.map((topicData) => {
+        if(topicData.slug===topic && !isValidTopic){
+          setIsValidTopic(true)}
+        })
+      },[isValidTopic])
+      let i=0
     return (
         <div>
-        {allTopics.map((topicData) => {
+        { 
+        allTopics.map((topicData) => {
+          i++
             if(topicData.slug===topic){
           return(
             <div className="topicListing" key={topicData.slug}>
@@ -28,6 +40,9 @@ export default function TopicsArticleView({allTopics, allArticles}) {
             </div>
             
           )}
+          else if(topicData.slug!==topic && i===allTopics.length && isValidTopic===false){
+            return (<h1>Error 404: Topic Not Found</h1>)
+          }
         })}
         </div>
       )

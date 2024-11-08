@@ -120,6 +120,11 @@
     justify-content: left;
 }
 
+.navLink{
+    padding: 30px;
+}
+
+
 .categoriesDropdownLabel {
     border: 2px solid black;
 }

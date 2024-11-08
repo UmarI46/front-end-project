@@ -28,15 +28,17 @@ export default function Topics() {
         setAllArticles(response.articles)
       })
       .catch((error)=>{
+        console.log("TEST TOPIC")
         setIsError(true)
       })
 
   },[])
 
   if (isError) {
-    return <h1>Error No Items Found</h1>;
+    return <h1>Error Topic Not Found</h1>;
   }
   if (isLoading) {
+    console.log("TEST LOADING TOPIC")
     return <h1>Loading...</h1>;
   }
 
