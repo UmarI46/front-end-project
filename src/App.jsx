@@ -8,6 +8,7 @@ import SignIn from './components/SignIn'
 import Topics from './components/Topics'
 import ArticlePage from './components/ArticlePage'
 import IndivisualTopic from './components/IndivisualTopic'
+import NoMatch from './components/NoMatch'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path= "/topics" element={<Topics/>}/>
         <Route path= "/topics/:topic" element={<IndivisualTopic/>}/>
         <Route path= "/sign-in" element={<SignIn/>} />
+        <Route path= "*" element={<NoMatch/>}/>
       </Routes>
     </>
   )

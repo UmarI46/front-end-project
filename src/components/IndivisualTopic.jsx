@@ -17,9 +17,13 @@ export default function IndivisualTopic() {
 
     getAllTopics()
     .then((response)=>{
+      console.log("TEST LOADING INDISVISUAL TOPIC")
+      console.log(response.topics)
+      //if(response.articles===undefined)setIsError(true)
       setAllTopics(response.topics)
     })
     .catch((error)=>{
+      console.log("Test")
       setIsError(true)
     })
 
@@ -35,7 +39,7 @@ export default function IndivisualTopic() {
   },[])
 
   if (isError) {
-    return <h1>Error No Items Found</h1>;
+    return <h1>Error 404: Topic Not Found</h1>;
   }
   if (isLoading) {
     return <h1>Loading...</h1>;
