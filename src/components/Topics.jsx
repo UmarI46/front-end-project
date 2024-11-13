@@ -7,8 +7,8 @@ export default function Topics() {
   const [isLoading, setIsLoading]= useState(true)
   const [isError, setIsError]= useState(false)
 
-  const [allTopics, setAllTopics]= useState(getAllTopics)
-  const [allArticles, setAllArticles]= useState(getAllArticles)
+  const [allTopics, setAllTopics]= useState([])
+  const [allArticles, setAllArticles]= useState([])
   
   useEffect(()=>{
     setIsLoading(true)
@@ -28,7 +28,6 @@ export default function Topics() {
         setAllArticles(response.articles)
       })
       .catch((error)=>{
-        console.log("TEST TOPIC")
         setIsError(true)
       })
 
@@ -38,7 +37,6 @@ export default function Topics() {
     return <h1>Error Topic Not Found</h1>;
   }
   if (isLoading) {
-    console.log("TEST LOADING TOPIC")
     return <h1>Loading...</h1>;
   }
 
